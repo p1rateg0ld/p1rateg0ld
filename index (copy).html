@@ -1,5 +1,4 @@
 <!Doctype html>
-
 	<head>
 		<title>Fly The Black</title>
 		<meta charset="utf-8">
@@ -20,66 +19,26 @@
 		 <script src="http://code.jquery.com/jquery.js"></script>
 		<!-- Ajax -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script>
-			window.lastButtonClicked = "";
-		</script>
 		
 		<!-- Put Scripts Here -->
 		<script>
-			<!--Resume Button -->
 			$(document).ready(function(){
 				$("#resume").on("click", function(){
-					if(window.lastButtonClicked === "resume"){
+					$("#slider").load("Resume.html", function(){
 						$("#slider").slideToggle("slow");
-					}
-					else{
-						window.lastButtonClicked = "resume";
-						$("#slider").empty();
-						if($("#slider").is(":visible")){
-							$("#slider").slideToggle("fast", function (){
-								window.lastButtonClicked = "resume";
-								$("#slider").load("Resume.html", function(){
-									$("#slider").slideToggle("slow");
-								});
-							});
-						}
-						else{
-							$("#slider").load("Resume.html", function(){
-								$("#slider").slideToggle("slow");
-							});
-						}
-					}				
+					});		
 				});
 			});
-			<!--Food Button -->
+		</script>
+		<script>
 			$(document).ready(function(){
 				$("#food").on("click", function(){
-					if(window.lastButtonClicked === "food"){
-						$("#slider").slideToggle("slow");
-					}
-					else{
-						window.lastButtonClicked = "food";
-						$("#slider").empty();
-						if($("#slider").is(":visible")){
-							$("#slider").slideToggle("fast", function(){
-								window.lastButtonClicked = "food";
-								$("#slider").load("foodPics.html", function(){
-									$("#slider").slideToggle("slow");
-								});
-							});
-						}
-						else{
-							$("#slider").load("foodPics.html", function(){
-								$("#slider").slideToggle("slow");
-							});
-						}
-					}				
+					$("#slider").load("foodPics.html", function(){
+						$"#slider").slideToggle("slow");
+					});
 				});
 			});
-			<!--Github Button -->
-			$(document).ready(function(){
-				window.location.replace("http://github.com/p1rateg0ld");		
-			});
+
 		</script>
 		<style>
 			body {
