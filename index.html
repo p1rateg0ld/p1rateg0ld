@@ -14,7 +14,7 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
 		<!-- Latest compiled and minified JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>z
 
 		<!-- Jquery -->
 		 <script src="http://code.jquery.com/jquery.js"></script>
@@ -30,22 +30,22 @@
 			$(document).ready(function(){
 				$("#resume").on("click", function(){
 					if(window.lastButtonClicked === "resume"){
-						$("#slider").slideToggle("slow");
+						$(".slider").slideToggle("slow");
 					}
 					else{
 						window.lastButtonClicked = "resume";
-						$("#slider").empty();
-						if($("#slider").is(":visible")){
-							$("#slider").slideToggle("fast", function (){
+						$(".slider").empty();
+						if($(".slider").is(":visible")){
+							$(".slider").slideToggle("fast", function(){
 								window.lastButtonClicked = "resume";
-								$("#slider").load("Resume.html", function(){
-									$("#slider").slideToggle("slow");
+								$(".slider").load("Resume_SysAdmin.html", function(){
+									$(".slider").slideToggle("slow");
 								});
 							});
 						}
 						else{
-							$("#slider").load("Resume.html", function(){
-								$("#slider").slideToggle("slow");
+							$(".slider").load("Resume_SysAdmin.html", function(){
+								$(".slider").slideToggle("slow");
 							});
 						}
 					}				
@@ -55,22 +55,22 @@
 			$(document).ready(function(){
 				$("#food").on("click", function(){
 					if(window.lastButtonClicked === "food"){
-						$("#slider").slideToggle("slow");
+						$(".slider").slideToggle("slow");
 					}
 					else{
 						window.lastButtonClicked = "food";
-						$("#slider").empty();
-						if($("#slider").is(":visible")){
-							$("#slider").slideToggle("fast", function(){
+						$(".slider").empty();
+						if($(".slider").is(":visible")){
+							$(".slider").slideToggle("fast", function(){
 								window.lastButtonClicked = "food";
-								$("#slider").load("foodPics.html", function(){
-									$("#slider").slideToggle("slow");
+								$(".slider").load("foodPics.html", function(){
+									$(".slider").slideToggle("slow");
 								});
 							});
 						}
 						else{
-							$("#slider").load("foodPics.html", function(){
-								$("#slider").slideToggle("slow");
+							$(".slider").load("foodPics.html", function(){
+								$(".slider").slideToggle("slow");
 							});
 						}
 					}				
@@ -79,7 +79,7 @@
 			<!--Github Button -->
 			$(document).ready(function(){
 				$("#github").on("click", function(){
-					window.location.replace("http://github.com/p1rateg0ld");	
+					window.location= "http://github.com/p1rateg0ld";	
 				});	
 			});
 		</script>
@@ -130,14 +130,15 @@
 			.btn{
 				margin-left:10px;
 			}
-			#navbarLink {
-				color:white;
-			}
-			#slider {
-				color: white;
+			.slider {
+				border: 1px solid #4286f4;
+				background: rgba(10,10,10,0.87);
 				height: 100%;
 				width: 100%;
 				display: none;			
+			}
+			#navbarLink {
+				color:white;
 			}
 		</style>
 	</head>
@@ -190,7 +191,7 @@
 				</nav>
 			</div>
 		</div>
-		<div id="slider">
+		<div class="container-fluid slider">
 			PoopDollaaahhh
 		</div>
 	</body>
